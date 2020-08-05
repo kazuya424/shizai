@@ -1,0 +1,91 @@
+body{
+  background-color: #f1fbff;
+}
+
+/* ヘッダー */
+header {
+  margin: 10px;
+}
+
+/* ナビ */
+.bg-info {
+  background-color: #bae5eb !important;
+}
+
+.item__header {
+  padding: 10px;
+}
+
+.item__user-icon {
+  float: left;
+}
+
+.item__user-name,
+.item__date {
+  display: block;
+  margin-left: 60px;
+}
+
+/* フォーム */
+.form_row {
+  padding: 0.5em 1em;
+  margin: 2em 0;
+  font-weight: bold;
+  border: solid 3px #000000;
+}
+
+.form_row .row span{
+  margin: 10px;
+}
+
+.nami{
+  text: center;
+}
+
+.overflow {
+  white-space: nowrap;
+  overflow: scroll;
+}
+
+.form_row input{
+  font-size: 20px;
+  margin-left: 20px;
+}
+
+.textright{
+  padding-right: 15px;
+}
+
+
+/* ボタン */
+.button {
+  display: flex;
+  justify-content: flex-end;
+  margin: 10px;
+}
+/* 
+#button_change{
+margin: 10px;
+} */
+
+/* ページネーション */
+.pagination {
+  margin: 10px;
+}
+
+/* テーブル */
+.form-control-1{
+  width: 150px;
+}
+.form-control-2{
+  width: 100px;
+}
+.table th{
+  text-align: center;
+
+}
+
+.form-index-1{
+  width: 90px;
+}
+

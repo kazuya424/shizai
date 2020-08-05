@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>資材管理システム</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/home.css">
+
+
+</head>
+
+<body>
+    <header>
+        <div class="container">
+
+            <nav class="navbar navbar-expand-lg navbar-light bg-info">
+
+
+                <a class="navbar-brand" href="#">資材管理</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="home.html">ホーム <span class="sr-only">(current)</span></a>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                切手等入出庫管理
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="warehousing.html">入庫画面</a>
+                                <a class="dropdown-item" href="#">出庫画面</a>
+                                <a class="dropdown-item" href="index.html">一覧画面</a>
+                                <a class="dropdown-item" href="#">集計表示画面</a>
+                                <a class="dropdown-item" href="#">在庫表示画面</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                郵便受付管理
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
+                                <a class="dropdown-item" href="#">入力画面</a>
+                                <a class="dropdown-item" href="#">一覧画面</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown3" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                マスタ管理
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown3">
+                                <a class="dropdown-item" href="#">登録・変更・削除</a>
+                            </div>
+                        </li>
+
+
+                    </ul>
+                    <form class="form-inline my-2 my-lg-0">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                    </form>
+                </div>
+
+                <div class="item__header clearfix">
+                    <span class="item__user-icon">
+                        <a href="login.html">
+                            <img src="../img/11.png" height="48" width="48" alt="ジバニャン" class="item__user-icon-img" />
+                        </a>                    </span>
+                    <span class="item__user-name">
+                        <strong>ログイン
+                        </strong>
+                    </span>
+                    <span class="item__date">
+                        2014/08/29 19:00
+                    </span>
+                </div>
+            </nav>
+        </div>
+
+    </header>
+
+    <!-- container1 -->
+
+    <div class="container">
+        <form class="form_row">
+
+            <div class="row">
+                <div class="form-group col-md-8">
+                    <span>日付</span>
+                    <input type="date" value="2017.06.01" id="date_s" maxlength="10">
+                    <span class="nami">　～</span>
+                    <input type="date" value="2017.04.01" id="date_f" maxlength="10">
+
+                </div>
+                <div class="form-group col-md-4">
+                    <div class="textright"><input type="submit" id="refine_search" value="絞り込み検索"></div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="form-group col-md-6">
+                    <label for="person">担当者</label>
+                    <select class="form-control" id="person">
+                        <option>担当者1</option>
+                        <option>担当者2</option>
+                        <option>担当者3</option>
+                        <option>担当者4</option>
+                        <option>担当者5</option>
+                    </select>
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label for="company">会社名</label>
+                    <select class="form-control" id="conpany">
+                        <option>会社名1</option>
+                        <option>会社名2</option>
+                        <option>会社名3</option>
+                        <option>会社名4</option>
+                        <option>会社名5</option>
+                    </select>
+                </div>
+            </div>
+            <div class="button">
+                <p class="textright"><input type="submit" value="検索"></p>
+            </div>
+
+        </form>
+    </div>
+    <!-- container2 -->
+    <div class="container">
+        <div class="button">
+            <button type="button" class="btn btn-warning" href="index.html">変更</button>
+            <button type="button" class="btn btn-danger">削除</button>
+        </div>
+    </div>
+
+    <!-- container3 -->
+    <div class="container">
+        <div class="table-responsive">
+            <div class="overflow">
+                <table class="table table-bordered">
+                    <thead class="danger">
+                        <tr>
+                            <th scope="col"><label class="form-control-2">変更</label></th>
+                            <th scope="col"><label class="form-control-2">削除</label></th>
+                            <th scope="col"><label class="form-control-1">入力日付</label></th>
+                            <th scope="col"><label class="form-control-2">取扱者</label></th>
+                            <th scope="col"><label class="form-control-2">記入者</label></th>
+                            <th scope="col"><label class="form-control-1">入庫・出庫</label></th>
+                            <th scope="col"><label class="form-control-1">会社名</label></th>
+                            <th scope="col"><label class="form-control-2">担当者</label></th>
+                            <th scope="col"><label class="form-control-1">内容</label></th>
+                            <th scope="col"><label class="form-control-1">切手・印紙</label></th>
+                            <th scope="col"><label class="form-control-2">円</label></th>
+                            <th scope="col"><label class="form-control-2">枚数</label></th>
+                            <th scope="col"><label class="form-control-1">使用者名</label></th>
+                            <th scope="col"><label class="form-control-2">備考</label></th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+
+                                </div>
+                            </th>
+                            <th>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+
+                                </div>
+                            </th>
+
+                            <th scope="row">2020/5/8</th>
+                            <th scope="row">小出</th>
+                            <th scope="row">小出</th>
+                            <th scope="row">出庫</th>
+                            <th scope="row">会社名</th>
+                            <th scope="row">担当者</th>
+                            <th scope="row">請書作成</th>
+                            <th scope="row">印紙</th>
+                            <th scope="row">200</th>
+                            <th scope="row">1</th>
+                            <th scope="row">YMS</th>
+                            <th scope="row">備考</th>
+
+
+                        </tr>
+
+                        <tr>
+                            <th>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+
+                                </div>
+                            </th>
+                            <th>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+
+                                </div>
+                            </th>
+
+                            <th scope="row">2020/5/8</th>
+                            <th scope="row">小出</th>
+                            <th scope="row">小出</th>
+                            <th scope="row">出庫</th>
+                            <th scope="row">会社名</th>
+                            <th scope="row">担当者</th>
+                            <th scope="row">請書作成</th>
+                            <th scope="row">印紙</th>
+                            <th scope="row">200</th>
+                            <th scope="row">1</th>
+                            <th scope="row">YMS</th>
+                            <th scope="row">備考</th>
+
+
+                        </tr>
+                        <tr>
+                            <th>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+
+                                </div>
+                            </th>
+                            <th>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+
+                                </div>
+                            </th>
+
+                            <th scope="row">2020/5/8</th>
+                            <th scope="row">小出</th>
+                            <th scope="row">小出</th>
+                            <th scope="row">出庫</th>
+                            <th scope="row">会社名</th>
+                            <th scope="row">担当者</th>
+                            <th scope="row">請書作成</th>
+                            <th scope="row">印紙</th>
+                            <th scope="row">200</th>
+                            <th scope="row">1</th>
+                            <th scope="row">YMS</th>
+                            <th scope="row">備考</th>
+
+
+                        </tr>
+                        <tr>
+                            <th>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+
+                                </div>
+                            </th>
+                            <th>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+
+                                </div>
+                            </th>
+
+                            <th scope="row">2020/5/8</th>
+                            <th scope="row">小出</th>
+                            <th scope="row">小出</th>
+                            <th scope="row">出庫</th>
+                            <th scope="row">会社名</th>
+                            <th scope="row">担当者</th>
+                            <th scope="row">請書作成</th>
+                            <th scope="row">印紙</th>
+                            <th scope="row">200</th>
+                            <th scope="row">1</th>
+                            <th scope="row">YMS</th>
+                            <th scope="row">備考</th>
+
+
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="container">
+        <nav aria-label="Page navigation">
+            <ul class="pagination justify-content-end">
+                <li class="page-item"><a class="page-link" href="#">Prev</a></li>
+                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item"><a class="page-link" href="#">Next</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+
+    <!-- bootstrap-datepickerのjavascriptコード -->
+
+
+
+</body>
+
+</html>

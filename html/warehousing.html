@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>資材管理システム</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/home.css">
+
+
+</head>
+
+<body>
+    <header>
+        <div class="container">
+
+            <nav class="navbar navbar-expand-lg navbar-light bg-info">
+
+
+                <a class="navbar-brand" href="#">資材管理</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="home.html">ホーム <span class="sr-only">(current)</span></a>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                切手等入出庫管理
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="warehousing.html">入庫画面</a>
+                                <a class="dropdown-item" href="#">出庫画面</a>
+                                <a class="dropdown-item" href="index.html">一覧画面</a>
+                                <a class="dropdown-item" href="#">集計表示画面</a>
+                                <a class="dropdown-item" href="#">在庫表示画面</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                郵便受付管理
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
+                                <a class="dropdown-item" href="#">入力画面</a>
+                                <a class="dropdown-item" href="#">一覧画面</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown3" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                マスタ管理
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown3">
+                                <a class="dropdown-item" href="#">登録・変更・削除</a>
+                            </div>
+                        </li>
+
+
+                    </ul>
+                    <form class="form-inline my-2 my-lg-0">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                    </form>
+                </div>
+
+                <div class="item__header clearfix">
+                    <span class="item__user-icon">
+                        <a href="login.html">
+                            <img src="../img/11.png" height="48" width="48" alt="ジバニャン" class="item__user-icon-img" />
+                        </a>                    </span>
+                    <span class="item__user-name">
+                        <strong>ログイン
+                        </strong>
+                    </span>
+                    <span class="item__date">
+                        2014/08/29 19:00
+                    </span>
+                </div>
+            </nav>
+        </div>
+
+    </header>
+    <!-- container1 -->
+
+    <div class="container">
+        <form class="form_row">
+
+            <div class="row">
+                <div class="form-group col-md-4">
+                    <span>日付</span>
+                    <input type="date" value="2017.06.01" id="date_s" maxlength="10">
+                </div>
+                <div class="form-group col-md-5">
+                    <div class="textright"><input type="submit" id="refine_search" value="絞り込み検索"></div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="form-group col-md-6">
+                    <label for="person">担当者</label>
+                    <select class="form-control" id="person">
+                        <option>担当者1</option>
+                        <option>担当者2</option>
+                        <option>担当者3</option>
+                        <option>担当者4</option>
+                        <option>担当者5</option>
+                    </select>
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label for="company">会社名</label>
+                    <select class="form-control" id="conpany">
+                        <option>会社名1</option>
+                        <option>会社名2</option>
+                        <option>会社名3</option>
+                        <option>会社名4</option>
+                        <option>会社名5</option>
+                    </select>
+                </div>
+            </div>
+            <div class="button">
+                <p class="textright"><input type="submit" value="検索"></p>
+            </div>
+
+        </form>
+    </div>
+
+    <!-- container2 -->
+    <div class="container">
+        <div class="table-responsive">
+            <div class="overflow">
+                <table class="table table-bordered text-nowrap">
+                    <thead>
+                        <tr>
+
+                            <th scope="col">入力日付</th>
+                            <th scope="col">取扱者</th>
+                            <th scope="col">記入者</th>
+                            <th scope="col">入庫・出庫</th>
+                            <th scope="col">会社名</th>
+                            <th scope="col">担当者</th>
+                            <th scope="col">内容</th>
+                            <th scope="col">切手・印紙</th>
+                            <th scope="col">円</th>
+                            <th scope="col">枚数</th>
+                            <th scope="col">使用者名</th>
+                            <th scope="col">備考</th>
+
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th><input class="form-control-1" type="date"></th>
+                            <th><select class="form-control-2">
+                                    <option>取扱者1</option>
+                                    <option>取扱者2</option>
+                                    <option>取扱者3</option>
+                                    <option>取扱者4</option>
+                                    <option>取扱者5</option>
+                                </select></th>
+                            <th><select class="form-control-2">
+                                    <option>記入者1</option>
+                                    <option>記入者2</option>
+                                    <option>記入者3</option>
+                                    <option>記入者4</option>
+                                    <option>記入者5</option>
+                                </select></th>
+                            <th><select class="form-control-2">
+                                    <option>入庫</option>
+                                    <option>出庫</option>
+                                </select></th>
+                            <th><input class="form-control-1" type="text"></th>
+                            <th><input class="form-control-2" type="text"></th>
+                            <th><select class="form-control-2">
+                                    <option>内容1</option>
+                                    <option>内容2</option>
+                                    <option>内容3</option>
+                                    <option>内容4</option>
+                                    <option>内容5</option>
+                                </select></th>
+                            <th><select class="form-control-2">
+                                    <option>切手</option>
+                                    <option>印紙</option>
+                                    <option>レターパック</option>
+                                </select></th>
+                            <th><input class="form-control-2" type="text"></th>
+                            <th><input class="form-control-2" type="text"></th>
+
+                            <th><select class="form-control-2">
+                                    <option>使用者名1</option>
+                                    <option>使用者名2</option>
+                                    <option>使用者名3</option>
+                                    <option>使用者名4</option>
+                                    <option>使用者名5</option>
+                                </select></th>
+
+                            <th><input class="form-control-2" type="text"></th>
+
+
+
+                        </tr>
+
+                    </tbody>
+                    <tbody>
+                        <tr>
+                            <th><input class="form-control-1" type="date"></th>
+                            <th><select class="form-control-2">
+                                    <option>取扱者1</option>
+                                    <option>取扱者2</option>
+                                    <option>取扱者3</option>
+                                    <option>取扱者4</option>
+                                    <option>取扱者5</option>
+                                </select></th>
+                            <th><select class="form-control-2">
+                                    <option>記入者1</option>
+                                    <option>記入者2</option>
+                                    <option>記入者3</option>
+                                    <option>記入者4</option>
+                                    <option>記入者5</option>
+                                </select></th>
+                            <th><select class="form-control-2">
+                                    <option>入庫</option>
+                                    <option>出庫</option>
+                                </select></th>
+                            <th><input class="form-control-1" type="text"></th>
+                            <th><input class="form-control-2" type="text"></th>
+                            <th><select class="form-control-2">
+                                    <option>内容1</option>
+                                    <option>内容2</option>
+                                    <option>内容3</option>
+                                    <option>内容4</option>
+                                    <option>内容5</option>
+                                </select></th>
+                            <th><select class="form-control-2">
+                                    <option>切手</option>
+                                    <option>印紙</option>
+                                    <option>レターパック</option>
+                                </select></th>
+                            <th><input class="form-control-2" type="text"></th>
+                            <th><input class="form-control-2" type="text"></th>
+
+                            <th><select class="form-control-2">
+                                    <option>使用者名1</option>
+                                    <option>使用者名2</option>
+                                    <option>使用者名3</option>
+                                    <option>使用者名4</option>
+                                    <option>使用者名5</option>
+                                </select></th>
+
+                            <th><input class="form-control-2" type="text"></th>
+
+
+
+                        </tr>
+
+                    </tbody>
+                    <tbody>
+                        <tr>
+                            <th><input class="form-control-1" type="date"></th>
+                            <th><select class="form-control-2">
+                                    <option>取扱者1</option>
+                                    <option>取扱者2</option>
+                                    <option>取扱者3</option>
+                                    <option>取扱者4</option>
+                                    <option>取扱者5</option>
+                                </select></th>
+                            <th><select class="form-control-2">
+                                    <option>記入者1</option>
+                                    <option>記入者2</option>
+                                    <option>記入者3</option>
+                                    <option>記入者4</option>
+                                    <option>記入者5</option>
+                                </select></th>
+                            <th><select class="form-control-2">
+                                    <option>入庫</option>
+                                    <option>出庫</option>
+                                </select></th>
+                            <th><input class="form-control-1" type="text"></th>
+                            <th><input class="form-control-2" type="text"></th>
+                            <th><select class="form-control-2">
+                                    <option>内容1</option>
+                                    <option>内容2</option>
+                                    <option>内容3</option>
+                                    <option>内容4</option>
+                                    <option>内容5</option>
+                                </select></th>
+                            <th><select class="form-control-2">
+                                    <option>切手</option>
+                                    <option>印紙</option>
+                                    <option>レターパック</option>
+                                </select></th>
+                            <th><input class="form-control-2" type="text"></th>
+                            <th><input class="form-control-2" type="text"></th>
+
+                            <th><select class="form-control-2">
+                                    <option>使用者名1</option>
+                                    <option>使用者名2</option>
+                                    <option>使用者名3</option>
+                                    <option>使用者名4</option>
+                                    <option>使用者名5</option>
+                                </select></th>
+
+                            <th><input class="form-control-2" type="text"></th>
+
+
+
+                        </tr>
+
+                    </tbody>
+                    <tbody>
+                        <tr>
+                            <th><input class="form-control-1" type="date"></th>
+                            <th><select class="form-control-2">
+                                    <option>取扱者1</option>
+                                    <option>取扱者2</option>
+                                    <option>取扱者3</option>
+                                    <option>取扱者4</option>
+                                    <option>取扱者5</option>
+                                </select></th>
+                            <th><select class="form-control-2">
+                                    <option>記入者1</option>
+                                    <option>記入者2</option>
+                                    <option>記入者3</option>
+                                    <option>記入者4</option>
+                                    <option>記入者5</option>
+                                </select></th>
+                            <th><select class="form-control-2">
+                                    <option>入庫</option>
+                                    <option>出庫</option>
+                                </select></th>
+                            <th><input class="form-control-1" type="text"></th>
+                            <th><input class="form-control-2" type="text"></th>
+                            <th><select class="form-control-2">
+                                    <option>内容1</option>
+                                    <option>内容2</option>
+                                    <option>内容3</option>
+                                    <option>内容4</option>
+                                    <option>内容5</option>
+                                </select></th>
+                            <th><select class="form-control-2">
+                                    <option>切手</option>
+                                    <option>印紙</option>
+                                    <option>レターパック</option>
+                                </select></th>
+                            <th><input class="form-control-2" type="text"></th>
+                            <th><input class="form-control-2" type="text"></th>
+
+                            <th><select class="form-control-2">
+                                    <option>使用者名1</option>
+                                    <option>使用者名2</option>
+                                    <option>使用者名3</option>
+                                    <option>使用者名4</option>
+                                    <option>使用者名5</option>
+                                </select></th>
+
+                            <th><input class="form-control-2" type="text"></th>
+
+
+
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+
+
+            <div class="button">
+                <button type="button" class="btn btn-info" href="index.html">登録</button>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+
+
+
+
+
+</body>
+
+</html>
